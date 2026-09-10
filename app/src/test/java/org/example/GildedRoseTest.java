@@ -26,5 +26,15 @@ class GildedRoseTest {
         assertEquals(0, app.items[0].quality);
     }
 
+    @Test
+    void normalItemQualityDecreasesTwiceAsFastUseByDate() {
+        Item [] items = new Item[]{ new Item ("foo", 0, 10)};
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        assertEquals(8, app.items[0].quality);
+    }
+
 }
 
